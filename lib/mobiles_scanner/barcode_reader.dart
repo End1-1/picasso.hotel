@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:cafe5_mworker/utils/prefs.dart';
+import 'package:picassohotel/utils/prefs.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 

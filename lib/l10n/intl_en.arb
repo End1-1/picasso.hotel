@@ -28,5 +28,7 @@
   "cashRemain": "Cash remains",
   "coinRemain": "Coin remains",
   "collection": "Collection",
-  "bank": "Bank"
+  "bank": "Bank",
+  "saveServerAddress": "Save server address",
+  "useDemoServer": "Use demo server"
 }

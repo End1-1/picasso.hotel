@@ -1,14 +1,14 @@
-import 'package:cafe5_mworker/bloc/app_bloc.dart';
-import 'package:cafe5_mworker/bloc/app_cubits.dart';
-import 'package:cafe5_mworker/bloc/question_bloc.dart';
-import 'package:cafe5_mworker/model/model.dart';
-import 'package:cafe5_mworker/model/navigation.dart';
-import 'package:cafe5_mworker/screen/menu.dart';
-import 'package:cafe5_mworker/utils/prefs.dart';
-import 'package:cafe5_mworker/utils/styles.dart';
+import 'package:picassohotel/bloc/app_bloc.dart';
+import 'package:picassohotel/bloc/app_cubits.dart';
+import 'package:picassohotel/bloc/question_bloc.dart';
+import 'package:picassohotel/l10n/app_localizations.dart';
+import 'package:picassohotel/model/model.dart';
+import 'package:picassohotel/model/navigation.dart';
+import 'package:picassohotel/screen/menu.dart';
+import 'package:picassohotel/utils/prefs.dart';
+import 'package:picassohotel/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 abstract class WMApp extends StatelessWidget {
   late final Navigation nav;
@@ -35,7 +35,7 @@ abstract class WMApp extends StatelessWidget {
       body: SafeArea(
         //minimum: const EdgeInsets.fromLTRB(5, 10, 5, 2),
         child: Stack(children: [
-          Container(padding: const EdgeInsets.all(5), child: body()),
+          Container(padding: const EdgeInsets.all(5), child: body(context)),
           BlocBuilder<AppLoadingCubit, AppLoadingState>(builder: (context, state) {
             return state == AppLoadingState.loading ? loading(locale().working) : Container();
 
@@ -98,7 +98,7 @@ abstract class WMApp extends StatelessWidget {
     return [];
   }
 
-  Widget body();
+  Widget body(BuildContext context);
 
   Widget loading(String text) {
     return Container(

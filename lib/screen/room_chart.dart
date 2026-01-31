@@ -1,8 +1,8 @@
-import 'package:cafe5_mworker/bloc/app_bloc.dart';
-import 'package:cafe5_mworker/bloc/question_bloc.dart';
-import 'package:cafe5_mworker/screen/app.dart';
-import 'package:cafe5_mworker/utils/calendar.dart';
-import 'package:cafe5_mworker/utils/prefs.dart';
+import 'package:picassohotel/bloc/app_bloc.dart';
+import 'package:picassohotel/bloc/question_bloc.dart';
+import 'package:picassohotel/screen/app.dart';
+import 'package:picassohotel/utils/calendar.dart';
+import 'package:picassohotel/utils/prefs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
@@ -31,7 +31,7 @@ class WMRoomChart extends WMApp {
   }
 
   @override
-  Widget body() {
+  Widget body(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

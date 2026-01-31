@@ -57,20 +57,11 @@ extension WMEDashboard on WMDashboard {
       case 'reports':
         getDashboardReports();
         break;
-      case 'shop':
-        return;
-      case 'store':
-        getDashboardStore();
-        return;
+
       case 'hotel':
         getDashboardHotel();
         return;
-      case 'waiter':
-        getDashboardWaiter();
-        break;
-      case 'elinarep':
-        getDashboardElinaRep();
-        break;
+
       default:
         return;
     }
@@ -110,15 +101,6 @@ extension WMEDashboard on WMDashboard {
       _model.drafts.clear();
       _model.drafts.addAll(d);
     }, AppStateDashboard(data: _model)));
-  }
-
-  void openDraft(String id) {
-    Navigator.push(
-        prefs.context(),
-        MaterialPageRoute(
-            builder: (builder) => WMDraftSale(model: model, draftid: id))).then((value) {
-              getDashboard();
-    });
   }
 
   void removeDraft(String id) {

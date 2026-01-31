@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:cafe5_mworker/utils/http_query.dart';
-import 'package:cafe5_mworker/utils/prefs.dart';
-import 'package:cafe5_mworker/utils/res.dart';
+import 'package:picassohotel/utils/http_query.dart';
+import 'package:picassohotel/utils/prefs.dart';
+import 'package:picassohotel/utils/res.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -1,25 +1,19 @@
-import 'package:cafe5_mworker/bloc/app_bloc.dart';
-import 'package:cafe5_mworker/bloc/question_bloc.dart';
-import 'package:cafe5_mworker/main.dart';
-import 'package:cafe5_mworker/mobiles_scanner/barcode_reader.dart';
-import 'package:cafe5_mworker/model/model.dart';
-import 'package:cafe5_mworker/screen/check_qty.dart';
-import 'package:cafe5_mworker/screen/check_room_availability.dart';
-import 'package:cafe5_mworker/screen/check_store_input.dart';
-import 'package:cafe5_mworker/screen/config.dart';
-import 'package:cafe5_mworker/screen/draft_sale.dart';
-import 'package:cafe5_mworker/screen/goods_info.dart';
-import 'package:cafe5_mworker/screen/goods_reserve.dart';
-import 'package:cafe5_mworker/screen/hotel_inventory.dart';
-import 'package:cafe5_mworker/screen/order.dart';
-import 'package:cafe5_mworker/screen/reports/elina/day_end.dart';
-import 'package:cafe5_mworker/screen/room_chart.dart';
-import 'package:cafe5_mworker/screen/room_reserve.dart';
-import 'package:cafe5_mworker/screen/rooms.dart';
-import 'package:cafe5_mworker/screen/voucher.dart';
-import 'package:cafe5_mworker/utils/prefs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:picassohotel/bloc/app_bloc.dart';
+import 'package:picassohotel/bloc/question_bloc.dart';
+import 'package:picassohotel/main.dart';
+import 'package:picassohotel/mobiles_scanner/barcode_reader.dart';
+import 'package:picassohotel/model/model.dart';
+import 'package:picassohotel/screen/check_room_availability.dart';
+import 'package:picassohotel/screen/config.dart';
+import 'package:picassohotel/screen/hotel_inventory.dart';
+import 'package:picassohotel/screen/reports/elina/day_end.dart';
+import 'package:picassohotel/screen/room_chart.dart';
+import 'package:picassohotel/screen/room_reserve.dart';
+import 'package:picassohotel/screen/rooms.dart';
+import 'package:picassohotel/screen/voucher.dart';
+import 'package:picassohotel/utils/prefs.dart';
 
 class Navigation {
   final WMModel model;
@@ -39,23 +33,6 @@ class Navigation {
   Future<void> rooms() {
     hideMenu();
     return Navigator.push(prefs.context(), MaterialPageRoute(builder: (builder) => WMRoomsScreen(model: model, entry: DateTime.now(), departure: DateTime.now())));
-  }
-
-  Future<void> createDraftSale() {
-    hideMenu();
-    return Navigator.push(prefs.context(),
-        MaterialPageRoute(builder: (builder) => WMDraftSale(model: model, draftid: '')));
-  }
-
-  Future<void> checkQuantity() {
-    hideMenu();
-    return Navigator.push(prefs.context(),
-        MaterialPageRoute(builder: (builder) => WMCheckQty(model: model)));
-  }
-
-  Future<void> checkStoreInput() {
-    hideMenu();
-    return Navigator.push(prefs.context(), MaterialPageRoute(builder: (builder) => WMCheckStoreInput(model: model)));
   }
 
   Future<void> dayEnd() {
@@ -95,13 +72,7 @@ class Navigation {
     return Navigator.push(prefs.context(), MaterialPageRoute(builder: (builder) => BarcodeScannerWithOverlay()));
   }
 
-  Future<Object?> goodsInfo(Map<String,dynamic> info) async {
-    return Navigator.push(prefs.context(), MaterialPageRoute(builder: (builder) => WMGoodsInfo(info, model: model)));
-  }
 
-  Future<bool?> goodsReservation(Map<String, dynamic> info, Map<String,dynamic> store) async {
-    return Navigator.push(prefs.context(), MaterialPageRoute(builder: (builder) => WMGoodsReserve(info, store, model: model)));
-  }
 
   Future<bool?> openRoom(dynamic r) async {
     return Navigator.push(prefs.context(), MaterialPageRoute(builder: (builder) => WMRoomReserve(model: model, room: r, folio: <String,dynamic>{},)));
@@ -124,7 +95,4 @@ class Navigation {
     return Navigator.push(prefs.context(), MaterialPageRoute(builder: (builder) => WMHotelInventory(model: model,room: d)));
   }
 
-  Future<bool?> openWaiterTable(int table) {
-    return Navigator.push(prefs.context(), MaterialPageRoute(builder: (builder) => WMOrder(model: model, table: table)));
-  }
 }

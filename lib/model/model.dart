@@ -1,11 +1,11 @@
 import 'dart:convert';
 
-import 'package:cafe5_mworker/bloc/app_bloc.dart';
-import 'package:cafe5_mworker/bloc/question_bloc.dart';
-import 'package:cafe5_mworker/screen/dashboard.dart';
-import 'package:cafe5_mworker/screen/login.dart';
-import 'package:cafe5_mworker/utils/prefs.dart';
-import 'package:cafe5_mworker/utils/res.dart';
+import 'package:picassohotel/bloc/app_bloc.dart';
+import 'package:picassohotel/bloc/question_bloc.dart';
+import 'package:picassohotel/screen/dashboard.dart';
+import 'package:picassohotel/screen/login.dart';
+import 'package:picassohotel/utils/prefs.dart';
+import 'package:picassohotel/utils/res.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -34,6 +34,11 @@ class WMModel {
 
   String tr(String s) {
     return Res.tr[s] ?? s;
+  }
+
+  void registerDemoServer() {
+    prefs.setString('serveraddress', 'home.picasso.am');
+    Navigator.pop(prefs.context(), true);
   }
 
   void registerOnServer() {

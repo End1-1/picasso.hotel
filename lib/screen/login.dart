@@ -1,8 +1,8 @@
-import 'package:cafe5_mworker/bloc/app_bloc.dart';
-import 'package:cafe5_mworker/bloc/app_cubits.dart';
-import 'package:cafe5_mworker/model/model.dart';
-import 'package:cafe5_mworker/utils/prefs.dart';
-import 'package:cafe5_mworker/utils/styles.dart';
+import 'package:picassohotel/bloc/app_bloc.dart';
+import 'package:picassohotel/bloc/app_cubits.dart';
+import 'package:picassohotel/model/model.dart';
+import 'package:picassohotel/utils/prefs.dart';
+import 'package:picassohotel/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

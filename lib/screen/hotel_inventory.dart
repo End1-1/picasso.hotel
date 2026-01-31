@@ -1,4 +1,4 @@
-import 'package:cafe5_mworker/screen/app.dart';
+import 'package:picassohotel/screen/app.dart';
 import 'package:flutter/material.dart';
 
 
@@ -16,7 +16,7 @@ class WMHotelInventory extends WMApp {
   }
 
   @override
-  Widget body() {
+  Widget body(BuildContext context) {
     return Container();
   }
 

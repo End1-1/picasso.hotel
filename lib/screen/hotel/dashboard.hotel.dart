@@ -1,13 +1,7 @@
 part of '../dashboard.dart';
 
 extension DashboardHotel on WMDashboard {
-  List<Widget> actionsHotel() {
-    return [
-      IconButton(
-          onPressed: model.navigation.openRoomChart,
-          icon: const Icon(Icons.table_chart_outlined)),
-    ];
-  }
+
 
   List<Widget> menuWidgetsHotel() {
     return [
